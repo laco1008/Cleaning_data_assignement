@@ -80,10 +80,6 @@ TidySet <- fancy_name %>%
 
 
 
-rm(list = ls())
-
-
-
 
 
 
