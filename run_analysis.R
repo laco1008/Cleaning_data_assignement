@@ -7,7 +7,7 @@ library(stringr)
 
 
 #111111111111111111111111111111111111111111111111111111111111111111111111111111#
-
+#First the file has to be downloaded and unzipped to the working directory manually
 #Import train data
 trainX <- read.table("UCI_HAR_Dataset//train//X_train.txt")
 trainY <- read.table("UCI_HAR_Dataset//train//Y_train.txt")
@@ -75,7 +75,8 @@ fancy_name <- activity_named_set %>%
 TidySet <- fancy_name %>% 
         group_by(activity, subject) %>%
         summarise(across(everything(), mean)) %>%
-        as.data.frame()
+        as.data.frame() %>%
+        write.table("TidySet.txt", row.names = FALSE)
 
 
 
